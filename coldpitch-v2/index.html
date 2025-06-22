@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gemini Networking Simulator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* For custom scrollbars if needed, though Tailwind provides utilities */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background-color: #9ca3af; /* Tailwind gray-400 */
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-track {
+      background-color: #e5e7eb; /* Tailwind gray-200 */
+    }
+    html, body, #root {
+      height: 100%;
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://esm.sh/@google/genai@^1.6.0",
+    "react": "https://esm.sh/react@^18.2.0",
+    "react-dom/client": "https://esm.sh/react-dom@^18.2.0/client",
+    "react-dom/": "https://esm.sh/react-dom@^18.2.0/",
+    "react/": "https://esm.sh/react@^18.2.0/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-slate-100">
+  <div id="root"></div>
+  <script>
+    // Mock process.env for browser environment as per instructions
+    // In a real build setup, this would be handled by the build tool
+    if (typeof process === 'undefined') {
+      window.process = { env: {} };
+    }
+    // YOU SHOULD SET YOUR API KEY HERE FOR THE APP TO WORK
+    // For example: window.process.env.API_KEY = "YOUR_GEMINI_API_KEY";
+    // Ensure this is done securely if deploying, typically via backend or build-time injection.
+    // As per instructions, assuming API_KEY is pre-configured and accessible.
+    // To make this example runnable, you can uncomment and set your key:
+    // window.process.env.API_KEY = "YOUR_API_KEY_HERE"; 
+  </script>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
